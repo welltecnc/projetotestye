@@ -1,0 +1,59 @@
+body{
+    position:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-left: 30%;
+    background-color: black;
+}
+.progress{
+  position: relative;
+  width: 500px;
+  height: 30px;
+  background:#fff;
+  --webkit-box-reflect:below 1px linear-gradient(transparent, #444 )
+}
+
+.progress::before{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, pink, blue,green, yellow,pink);
+    animation: animaProgress 10s linear infinite;
+    background-size: 500%;
+
+
+}
+
+
+.progress::after{
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, pink, blue,green, yellow);
+    animation: animaProgress 20s linear infinite;
+    background-size: 500%;
+
+    filter: blur(15px);
+
+}
+
+@keyframes animaProgress {
+    0% {
+        background-position: 0 0;
+    }
+    0%{
+        background-position: 500% 0;
+    }
+}
+
+@media screen and (max-width:500px){
+    body{
+        position:flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        margin-left: 10px;
+        background-color: black;
+    }
+}
